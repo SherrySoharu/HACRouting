@@ -1,14 +1,35 @@
-import { React } from "react";
+import { React, useState } from "react";
 import space from "../assets/space.jpg";
 import "../Styles/Home.css";
 
 import { View, Text, StyleSheet, Image } from 'react';
 import {styles,style} from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
+// const[change,SetChange]=useState("palku");
+
+// const click=()=>{
+//   if(change=="palku"){
+//     SetChange("Avdhesh");
+//   }
+//   else{
+//     SetChange("palku")
+//   }
+// }
+// const[number,SetNumber]=useState(0);
+// const count=()=>{
+//   SetNumber(number+1);
+
+// }
+let navigate = useNavigate()
+  if(!localStorage.getItem("name")) navigate("/");
   return (
     <div class="container">
-    <h1 class="title">Welcome to Space Exploration Hub</h1>
+    {/* <button onClick={count}>click</button> */}
+
+    <h1 class="title">Welcome {localStorage.getItem("name")} to Space Exploration Hub</h1>
     {/* <Image
       source={require('./space.jpg')} */}
       <img class="space" src={space}/>
