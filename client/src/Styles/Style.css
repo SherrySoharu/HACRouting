@@ -23,3 +23,10 @@ nav {
   color:black;
 }
 
+#login{
+ display: flex;
+  justify-content: flex-end;
+}
+.btnn{
+  border-radius: 10px;
+}
